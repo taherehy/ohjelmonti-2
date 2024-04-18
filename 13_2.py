@@ -1,14 +1,16 @@
 from flask import Flask, jsonify
 
 app = Flask(__name__)
+yhteys = mysql.connector.connect(
+         host='127.0.0.1',
+         port= 3306,
+         database='ihmiset',
+         user="root",
+         password="tt1000",
+         autocommit=True
+         )
 
-# Simuloitu lentokenttätietokanta
-airport_database = {
-    "EFHK": {"Name": "Helsinki Vantaa Airport", "Municipality": "Helsinki"},
-    # Lisää tarvittaessa muita lentokenttiä
-}
 
-# GET-pyyntö kenttä/:ICAO
 @app.route('/kenttä/<ICAO>')
 def get_airport_info(ICAO):
     airport = airport_database.get(ICAO)

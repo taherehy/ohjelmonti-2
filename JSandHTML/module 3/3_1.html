@@ -1,0 +1,14 @@
+// آرایه از اسامی
+const names = ['جان', 'پاول', 'جونز'];
+
+// المان مورد نظر
+const targetElement = document.getElementById('target');
+
+// کد HTML برای اضافه کردن
+let htmlCode = '';
+for (const name of names) {
+  htmlCode += `<li>${name}</li>`;
+}
+
+// افزودن کد HTML به المان مورد نظر
+targetElement.innerHTML = htmlCode;
